@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube to MP3 Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #872323, #2e0d0d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f0f0f0;
+        }
+        
+        .container {
+            background: #1f1f1f;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            width: 400px;
+            text-align: center;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        h2 {
+            color: #ff4c4c;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+        
+        input[type="url"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: #2d2d2d;
+            color: #eee;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        
+        input[type="url"]:focus {
+            outline: 2px solid #ff4c4c;
+            background-color: #3a3a3a;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: #ff3d3d;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-1px);
+            background: #e03333;
+        }
+        
+        .status {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>🎧 YouTube to MP3</h2>
+        <input type="url" id="youtubeUrl" placeholder="Paste YouTube video URL">
+        <button onclick="convert()">Convert Now</button>
+        <div class="status" id="status"></div>
+    </div>
+
+    <script>
+        function convert() {
+            const url = document.getElementById('youtubeUrl').value.trim();
+            const status = document.getElementById('status');
+
+            if (!url || !url.startsWith("http")) {
+                status.innerHTML = "❌ Please enter a valid URL.";
+                return;
+            }
+
+            // Redirect to test.html
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+
+</html>
